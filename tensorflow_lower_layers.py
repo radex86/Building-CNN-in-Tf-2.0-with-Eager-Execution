@@ -74,7 +74,7 @@ def convPool(X,W,b, strides=1, k=2):
 
 # creating the conv_net Model
 # layer 1 CNN
-def conv_model(X, W,b, dropout):
+def conv_model(X, W,b, dropout=0.75):
     Conv1 = convPool(X,W['wc1'],b['bc1'])
 
     # layer 2 CNN
