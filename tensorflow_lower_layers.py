@@ -153,7 +153,7 @@ for epoch in range(epochs):
         print(f'Epoch {epoch+1}, Batch {j} -Loss: {cost()} Accuracy: {val_accuracy} - Val_loss: {val_cost()} Val_Accuracy: {val_accuracy}.')
 
 prediction = tf.equal(tf.argmax(conv_model(xtest, weights, baises, dropout), 1), tf.argmax(ytest, 1))
-acc = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+acc = tf.reduce_mean(tf.cast(prediction, tf.float32))
 print('Testing Accuracy: {}'.format(acc))
 
 plt.plot(loss, label='loss', color='blue')
